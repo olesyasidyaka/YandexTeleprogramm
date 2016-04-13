@@ -5,7 +5,7 @@ import lxml.html as html
 import io, json
 import datetime
 import codecs
-
+import re
 
 json_string = ''
 data = dict()
@@ -49,8 +49,10 @@ def readDay(ind, link, day, weekday):
 			pr = row.cssselect('.tv-channel-events__items')[0]
 			time = pr.cssselect('.tv-event__time-text')
 			prog = pr.cssselect('.tv-event__title-inner')
+			genre = pr.cssselect('.tv-event')
 			for p in range(0, len(time)):
-			 	item['programs'].append([time[p].text_content(), prog[p].text_content()])
+				m = re.match(r'.*"genre":"(.*)"', genre[p].get('data-bem')).group(1)
+				item['programs'].append([time[p].text_content(), prog[p].text_content(), m])
 		
 		data[ind]['channels'].append(item)
 

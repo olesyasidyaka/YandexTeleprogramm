@@ -166,3 +166,29 @@ a {
 .ui-helper-hidden-accessible {
 	display: none
 }
+
+.genre_select {
+	width: auto;
+	font-size: 0.8em;
+	float: right;
+	padding: 15px 5px;
+	display: inline;
+	font-weight: normal;
+}
+
+.genre {
+	float: left;	
+}
+
+.genre_wrapper {
+	padding-right: 120px;
+}
+
+.sport:hover, .series:hover, .children:hover, .films:hover {
+	color: #d95d5d;
+	cursor: pointer;
+}
+
+.genre_selected {
+	color: #d95d5d;
+}
