@@ -15,6 +15,7 @@ $(document).ready(function() {
 			return tooltipHTML;
 		}
 	});
+	//$(".ui-helper-hidden-accessible").hide();
 });
 
 var day = 'today'

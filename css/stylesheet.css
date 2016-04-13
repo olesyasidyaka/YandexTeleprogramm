@@ -162,3 +162,7 @@ a {
 	padding-top: 10px;
 	font-weight: bold;
 }
+
+.ui-helper-hidden-accessible {
+	display: none
+}
