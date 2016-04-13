@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Программа передач</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="header">
+			<div class="header_title">Телепрограмма на неделю</div>
+			<div class="header_nav">
+				<div class="nav_day selected" onclick="loadPrograms('today');"><a class="nav_day_link" href="#">Сегодня</a></div>
+				<div class="nav_day" onclick="loadPrograms(1);"><a class="nav_day_link" href="#"></a></div>
+				<div class="nav_day" onclick="loadPrograms(2);"><a class="nav_day_link" href="#"></a></div>
+				<div class="nav_day" onclick="loadPrograms(3);"><a class="nav_day_link" href="#"></a></div>
+				<div class="nav_day" onclick="loadPrograms(4);"><a class="nav_day_link" href="#"></a></div>
+				<div class="nav_day" onclick="loadPrograms(5);"><a class="nav_day_link" href="#"></a></div>
+				<div class="nav_day" onclick="loadPrograms(6);"><a class="nav_day_link" href="#"></a></div>
+			</div>
+			<div class="header_line"></div>
+		</div>
+		<div id="channels" class="channels_wrapper"></div>
+		<div class="footer">Footer</div>	
+	</div>
+	<script type="text/javascript" src="JS/index.js"></script>
+</body>
+</html>
