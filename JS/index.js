@@ -10,7 +10,10 @@ $(document).ready(function() {
 		hide: {effect: 'fade', delay:400, duration:600},
 		content: function(callback) {
 			var elem = $(this);
-			var tooltipHTML = $('<div/>').append("Подробная информация о программе <div class='tooltip_program'>" + $(elem).text() + "</div></div>");
+			var htmlString = "Подробная информация о программе <div class='tooltip_program'>";
+			htmlString += $(elem).text() + "</div>";
+			htmlString += "<div class='toltip_genre'>жанр: " + $(elem).data('genre') + "</div>";
+			var tooltipHTML = $('<div/>').append(htmlString);
 			return tooltipHTML;
 		}
 	});
@@ -72,7 +75,7 @@ function loadChannels() {
 			var program_item_time = $("<div/>", {class : "channel_program_item_time", "html": channels[i]['programs'][j][0]});
 			var program_name = $("<span/>", {class : 'channel_program_item_name_inner'});
 			$(program_name).attr('title', '');
-			$(program_name).data('genre', genreFromString(channels[i]['programs'][j][2]));
+			$(program_name).data('genre', channels[i]['programs'][j][2]);
 			$(program_name).text(channels[i]['programs'][j][1]);
 			var program_item_name = $("<div/>", {class : "channel_program_item_name", "html": program_name});
 	
@@ -119,7 +122,7 @@ function loadPrograms(day) {
 	}
 
 function selectGenre(g, caller) {
-	genre[g] = genre[g] == true ? false : true;
+	genre[g] = !genre[g];
 	markGenres();
 
 	if (genre[g])
@@ -131,7 +134,7 @@ function selectGenre(g, caller) {
 function markGenres()
 {
 	$('.channel_program_item_name_inner').each(function() {
-			el_genre = $(this).data('genre')
+			el_genre = genreFromString($(this).data('genre'))
 			if (el_genre in genre) {
 				if (genre[el_genre])
 					$(this).addClass('genre_selected');

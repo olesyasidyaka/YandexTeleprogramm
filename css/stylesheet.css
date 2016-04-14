@@ -163,6 +163,10 @@ a {
 	font-weight: bold;
 }
 
+.toltip_genre {
+	padding-top: 10px;
+}
+
 .ui-helper-hidden-accessible {
 	display: none
 }
@@ -191,4 +195,5 @@ a {
 
 .genre_selected {
 	color: #d95d5d;
+	/*font-weight: bold;*/
 }
