@@ -14,6 +14,7 @@ $(document).ready(function() {
 			htmlString += $(elem).text() + "</div>";
 			htmlString += "<div class='toltip_genre'>жанр: " + $(elem).data('genre') + "</div>";
 			var tooltipHTML = $('<div/>').append(htmlString);
+			console.log( $(elem).data('genre'));
 			return tooltipHTML;
 		}
 	});
