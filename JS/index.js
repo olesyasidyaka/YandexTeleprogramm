@@ -15,10 +15,10 @@ $(document).ready(function() {
 			htmlString += "<div class='toltip_genre'>жанр: " + $(elem).data('genre') + "</div>";
 			var tooltipHTML = $('<div/>').append(htmlString);
 			console.log( $(elem).data('genre'));
+			console.log('toltip');
 			return tooltipHTML;
 		}
 	});
-	//$(".ui-helper-hidden-accessible").hide();
 });
 
 var day = 'today'
